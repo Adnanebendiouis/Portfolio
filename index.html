@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio | Backend Developer</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    :root {
+      --bg-light: #f5f5f5;
+      --text-light: #111;
+      --card-light: #ffffff;
+      --bg-dark: #0d0d0d;
+      --text-dark: #f0f0f0;
+      --card-dark: #1a1a1a;
+      --primary: #3b82f6;
+    }
+
+    [data-theme="light"] {
+      --bg: var(--bg-light);
+      --text: var(--text-light);
+      --card: var(--card-light);
+    }
+
+    [data-theme="dark"] {
+      --bg: var(--bg-dark);
+      --text: var(--text-dark);
+      --card: var(--card-dark);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      transition: all 0.3s;
+    }
+
+    header {
+      padding: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav a {
+      margin: 0 1rem;
+      text-decoration: none;
+      color: var(--text);
+      font-weight: bold;
+
+    }
+    nav {
+      flex: 1;
+      text-align: center;
+      justify-content: center;
+      display:flex
+    }
+
+    .hero {
+      text-align: center;
+      padding: 4rem 2rem;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 1rem auto;
+    }
+
+    .btn {
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform 0.2s ease, background-color 0.3s, color 0.3s, border 0.3s;
+    }
+    
+    [data-theme="dark"] .btn {
+      background-color: #0d0d0d;
+      color: white;
+      border: 2px solid white;
+    }
+    
+    [data-theme="light"] .btn {
+      background-color: white;
+      color: black;
+      border: 2px solid black;
+    }
+    
+    .btn:hover {
+      transform: scale(1.1);
+    }
+    
+
+    section {
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+
+    .card {
+      background: var(--card);
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .theme-toggle {
+      cursor: pointer;
+      background: none;
+      border: none;
+      font-size: 1.2rem;
+      color: var(--text);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+    }
+
+    /* Inputs and Textareas */
+    input, textarea {
+      width: 100%;
+      padding: 1rem;
+      border-radius: 10px;
+      background-color: transparent;
+      color: var(--text);
+      font-size: 1rem;
+      border: 2px solid var(--text);
+      text-align: left; /* Or center if you prefer */
+      box-sizing: border-box;
+      display: block;
+      margin-bottom: 1.5rem;
+      line-height: 1.5;
+    }
+
+/* On focus */
+input:focus, textarea:focus {
+  outline: none;
+  border: 2px solid var(--primary);
+  background-color: rgba(255, 255, 255, 0.05);
+  
+}
+
+/* Ensure form section is centered and spaced nicely */
+#contact form {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+form .card {
+  background-color: var(--card);
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Label styling */
+label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <h2>Hi, I'm <strong>Adnene Bendiouis</strong></h2>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#personal-info">Prsonal Info</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="theme-toggle" onclick="toggleTheme()">🌓</button>
+  </header>
+
+  <div class="hero">
+    <h1>Computer Science Student & Backend Developer</h1>
+    <p>Experienced in Django, Flask, and building smart IoT systems. AIESEC member & robotics enthusiast.</p>
+    <button class="btn" onclick="document.getElementById('projects').scrollIntoView({ behavior: 'smooth' })">View Projects</button>
+    
+  </div>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I’m a backend developer and computer science student with experience in robotics, web development, and real-world problem solving.</p>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Languages</h3>
+        <p>Java, C,HTML, CSS, JavaScript, Python, Ino, dart </p>
+      </div>
+      <div class="card">
+        <h3>Frameworks</h3>
+        <p>Django, Flask, React, Flutter, </p>
+      </div>
+      <div class="card">
+        <h3>Tools</h3>
+        <p>SQLite, Git, JWT</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Nutrition App</h3>
+        <p>Django backend with barcode scanner, suggestion engine, and SQLite integration.</p>
+      </div>
+      <div class="card">
+        <h3>E-commerce Platform</h3>
+        <p>Client/Seller system using JWT Auth and Django REST API.</p>
+      </div>
+      <div class="card">
+        <h3>Smart House (Arduino)</h3>
+        <p>LED automation and sensor management for a smart home prototype.</p>
+      </div>
+      <div class="card">
+        <h3><a href="https://github.com/Adnanebendiouis/Arduino-Competition-">Line follower (Arduino)</a></h3>
+        <p>Built a line follower robot using Arduino and digital IR sensors to autonomously track and follow a black line path</p>
+      </div>
+      <div class="card">
+        <h3><a href="https://github.com/Adnanebendiouis/Arduino-Competition-">Obstacle Avoider(Arduino)</a></h3>
+        <p>Developed an obstacle-avoiding robot with Arduino, using an ultrasonic sensor on a servo to detect and navigate around obstacles autonomously.</p>
+      </div>
+      
+    </div>
+  </section>
+  <section id="experience">
+    <h2>Experience</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>University Student - Computer Science</h3>
+        <p>Currently pursuing a degree in Computer Science (2023 – Present), with a focus on backend development, robotics, and web technologies.</p>
+      </div>
+      <div class="card">
+        <h3>AIESEC - Partnership Creation Member</h3>
+        <p>Organized events, contacted partners, and managed sponsorships as part of the Partnership department.</p>
+      </div>
+      <div class="card">
+        <h3>Arduino Robotics Competitions</h3>
+        <p>Designed and programmed autonomous robots like line followers and obstacle avoiders using Arduino.</p>
+      </div>
+      <div class="card">
+        <h3>Freelance Backend Developer</h3>
+        <p>Built REST APIs, authentication systems, and databases for real-world applications using Django and Flask.</p>
+      </div>
+    </div>
+  </section>  
+  <section id="personal-info">
+    <h2>Personal Info</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Full Name</h3>
+        <p>Adnene Bendiouis</p>
+      </div>
+      <div class="card">
+        <h3>Location</h3>
+        <p>Tlemcen, Algeria</p>
+      </div>
+      <div class="card">
+        <h3>Email</h3>
+        <p>bendiouisadnane3@gmail.com</p>
+      </div>
+      <div class="card">
+        <h3>LinkedIn</h3>
+        <p><a href="https://www.linkedin.com/in/adnene-bendiouis-630783331/" target="_blank">linkedin.com/in/adnanebendiouis</a></p>
+      </div>
+      <div class="card">
+        <h3>GitHub</h3>
+        <p><a href="https://github.com/Adnanebendiouis" target="_blank">github.com/Adnanebendiouis</a></p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- <section id="contact">
+    <h2>Contact</h2>
+    <form onsubmit="event.preventDefault(); alert('Thanks for reaching out!');">
+      <div class="grid" style="gap: 2rem; margin-bottom: 2rem;align-items: center;">
+        <div class="card" style="padding: 2rem;">
+          <label for="name"><i class="fas fa-user"></i> Name</label>
+          <input type="text" id="name" placeholder="Your full name" required />
+        </div>
+        <div class="card" style="padding: 2rem;">
+          <label for="email"><i class="fas fa-envelope"></i> Email</label>
+          <input type="email" id="email" placeholder="your@email.com" required />
+        </div>
+      </div>
+      <div class="card" style="padding: 2rem; margin-bottom: 2rem;">
+        <label for="message"><i class="fas fa-comment-dots"></i> Message</label>
+        <textarea id="message" placeholder="Write your message here..." rows="6" required></textarea>
+      </div>
+      <div style="text-align: center;">
+        <button type="submit" class="btn" style="padding: 1rem 2rem; font-size: 1rem;">Send Message</button>
+      </div>
+    </form>
+    
+    
+  </section> -->
+
+  <footer>
+    <p>© 2025 Adnene Bendiouis. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      html.setAttribute('data-theme', html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+    }
+  </script>
+</body>
+</html>
