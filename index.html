@@ -408,16 +408,44 @@
     }
 
     /* ── RESPONSIVE ─────────────────────────── */
+
+    /* hide custom cursor on touch devices */
+    @media (pointer: coarse) {
+      body { cursor: auto; }
+      #cur, #cur-ring { display: none; }
+    }
+
+    /* tablet */
+    @media (max-width: 860px) {
+      section { padding: 4.5rem 0; }
+      #hero { padding-top: 9rem; }
+      .proj-grid { grid-template-columns: 1fr; }
+    }
+
+    /* large mobile */
     @media (max-width: 640px) {
       nav { padding: 0 1.25rem; }
       .wrap { padding: 0 1.25rem; }
       .nav-links { gap: 1.25rem; }
-      #hero { padding-top: 8.5rem; }
-      .proj-grid  { grid-template-columns: 1fr; }
+      section { padding: 3.5rem 0; }
+      #hero { padding-top: 7.5rem; min-height: auto; padding-bottom: 3.5rem; }
       .skills-wrap { grid-template-columns: 1fr; }
       .contact-wrap { grid-template-columns: 1fr; }
       .c-link.full { grid-column: auto; }
-      footer { flex-direction: column; gap: .4rem; }
+      footer { flex-direction: column; gap: .4rem; text-align: center; }
+    }
+
+    /* small mobile */
+    @media (max-width: 420px) {
+      nav { padding: 0 1rem; }
+      .wrap { padding: 0 1rem; }
+      .nav-links { gap: .85rem; }
+      .nav-links a { font-size: .68rem; }
+      .nav-brand { font-size: .72rem; }
+      .hero-bio { font-size: .96rem; }
+      .btn { padding: .72rem 1.1rem; min-height: 44px; font-size: .72rem; }
+      .cta { gap: .55rem; }
+      section { padding: 3rem 0; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -506,6 +534,16 @@
             <h3 class="proj-name">SahaCheck</h3>
             <p class="proj-desc">Scan food products to check nutritional values. Contributed to backend development and product data pipeline.</p>
           </div>
+
+          <a href="https://liber-tech.vercel.app/" target="_blank" rel="noopener" class="proj" style="grid-column: 1 / -1;">
+            <div class="proj-head">
+              <span class="proj-tag">Web</span>
+              <span class="proj-arrow">↗</span>
+            </div>
+            <h3 class="proj-name">Libertec</h3>
+            <p class="proj-desc">Landing page for an Algerian video surveillance and security systems company. Built and deployed on Vercel.</p>
+            <span class="proj-link">liber-tech.vercel.app</span>
+          </a>
 
         </div>
       </div>
